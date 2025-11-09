@@ -63,7 +63,7 @@ class.
     vim pasture/manifests/init.pp
 
 So far, this should look just like the `cowsay` class, except that the package
-resource will manage the `pasture` package instead of `cowsay`. (and some required packages for pasture whicj can be specified as an array for the package resource)
+resource will manage the `pasture` package instead of `cowsay`. (and some required packages for pasture which can be specified as an array for the package resource)
 
 ```puppet
 class pasture {
@@ -106,6 +106,10 @@ And trigger a Puppet agent run.
 
     sudo puppet agent -t
 
+Due to an issue with installed gems you will also need to run this command.
+
+    sudo sed -i s/args.pop/#args.pop/g /usr/local/share/gems/gems/rack-1.6.13/lib/rack/handler/thin.rb
+
 <div class = "lvm-task-number"><p>Task 5:</p></div>
 
 With the `pasture` gem installed, you can use the `pasture start` command. We haven't set up a service to manage this
@@ -131,6 +135,10 @@ By default, your message will be spoken by the cow character. Let's try passing
 in another parameter to change this.
 
     curl 'localhost:4567/api/v1/cowsay?message=Hello!&character=elephant'
+
+As you can see there are multiple animals to choose from, run the following command to see all available animals. You can try these animals in your own code if you like.
+
+    cowsay -l
 
 <div class = "lvm-task-number"><p>Task 7:</p></div>
 
