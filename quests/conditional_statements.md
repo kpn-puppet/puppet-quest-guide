@@ -342,7 +342,7 @@ re-authenticating as you work.
 
     puppet access login --lifetime 1d
 
-When prompted, supply the username **learning** and password **puppet**.
+When prompted, supply the username **learning** and password **puppetlabs**.
 
 Now you can trigger Puppet agent runs on `node-x.internal.cloudapp.net` with the `puppet job` tool.
 We only test witj one node but you can provide the names of the multiple nodes in a comma-separated list after the `--nodes` flag. (Note that
