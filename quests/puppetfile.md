@@ -144,7 +144,7 @@ mod "puppetlabs/concat", '5.3.0'
 mod "puppetlabs/stdlib", '5.2.0'
 mod "puppetlabs/docker", '3.10.0'
 mod 'dockeragent',
-  :git => 'https://github.com/cjswart/pltraining-dockeragent.git'
+  :git => 'https://github.com/kpn-puppet/pltraining-dockeragent.git'
 ```
 
 <div class = "lvm-task-number"><p>Task 4:</p></div>
