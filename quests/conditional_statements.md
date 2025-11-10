@@ -326,7 +326,7 @@ Enter a new user with the **Full name** `Learning` and **Login** `learning` and 
 
 Click on the name of the new user, then click the **Generate password reset**
 link. Copy the given link to a new browser tab and set the password to:
-**puppet**.
+**puppetlabs**.
 
 Return to the original PE console browser tab, and click the **Access Control**
 menu item, then click the **User Roles** tab. Click on the link for the
