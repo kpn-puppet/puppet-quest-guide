@@ -67,8 +67,32 @@ resource will manage the `pasture` package instead of `cowsay`. (and some requir
 
 ```puppet
 class pasture {
-  package { ['pasture', 'thin', 'puma', 'reel', 'http', 'webrick']:
+  package { 'public_suffix':
+    ensure   => '5.1.1',
+    provider => gem,
+  }
+  package { ['pasture', 'webrick']:
     ensure   => present,
+    provider => gem,
+  }
+  package { 'http':
+    ensure   => '5.1.1',
+    provider => gem,
+  }
+  package { 'puma':
+    ensure   => '6.4.0',
+    provider => gem,
+  }
+  package { 'thin':
+    ensure   => '1.8.2',
+    provider => gem,
+  }
+  package { 'timers':
+    ensure   => '4.3.5',
+    provider => gem,
+  }
+  -> package { 'reel':
+    ensure   => '0.6.1',
     provider => gem,
   }
 }
@@ -105,10 +129,6 @@ Now connect to the `node-x.internal.cloudapp.net` node.
 And trigger a Puppet agent run.
 
     sudo puppet agent -t
-
-Due to an issue with installed gems you will also need to run this command.
-
-    sudo sed -i s/args.pop/#args.pop/g /usr/local/share/gems/gems/rack-1.6.13/lib/rack/handler/thin.rb
 
 <div class = "lvm-task-number"><p>Task 5:</p></div>
 
